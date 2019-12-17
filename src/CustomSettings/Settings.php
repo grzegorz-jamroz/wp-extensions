@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Grzechu\CustomSettings;
 
-use Grzechu\CustomSettings\SettingField\SettingField;
 use Grzechu\CustomSettings\SettingField\SettingFieldCollection;
 use Grzechu\CustomSettings\SettingsBuilder\SettingsBuilder;
 use Grzechu\CustomSettings\SettingSection\SettingSectionCollection;
