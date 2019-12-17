@@ -1,0 +1,68 @@
+<?php
+declare(strict_types=1);
+
+namespace App\CustomSettings\SettingsBuilder;
+
+use App\CustomSettings\SettingField\SettingFieldCollection;
+use App\CustomSettings\SettingField\TextareaField;
+use App\CustomSettings\SettingSection\SimpleSection;
+use App\CustomSettings\SettingSection\SettingSectionCollection;
+
+class SampleSettingsBuilder extends SettingsBuilder
+{
+    protected function addSections(SettingSectionCollection $sections): void
+    {
+        $sections->add(
+            new SimpleSection(
+                'first_sample_section',
+                'First sample section',
+                [
+                    'description' => 'This is first section.',
+                ]
+            ),
+            new SimpleSection(
+                'second_sample_section',
+                'Second sample section',
+                [
+                    'description' => 'This is second section.',
+                ]
+            ),
+        );
+    }
+
+    protected function addFields(SettingFieldCollection $fields): void
+    {
+        $fields->add(
+            new TextareaField(
+                'first_sample_section',
+                'first_sample_section_field_one',
+                'Field one',
+                [
+                    'settingArgs' => [
+                        'sanitize_callback' => null
+                    ],
+                ]
+            ),
+            new TextareaField(
+                'first_sample_section',
+                'first_sample_section_field_two',
+                'Field two',
+                [
+                    'settingArgs' => [
+                        'sanitize_callback' => null
+                    ],
+                ]
+            ),
+            new TextareaField(
+                'second_sample_section',
+                'second_sample_section_field_one',
+                'Field one',
+                [
+                    'settingArgs' => [
+                        'sanitize_callback' => null
+                    ],
+                ]
+            ),
+        );
+    }
+}

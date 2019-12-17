@@ -1,0 +1,12 @@
+{
+  "name": "grzegorz-jamroz/wp-extensions",
+  "description": "Library contains some classes which allow to prepare easy and quick custom settings pages.",
+  "require": {
+    "php": "^7.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Grzechu\\": "src/"
+    }
+  }
+}
