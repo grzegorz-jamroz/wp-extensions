@@ -2,45 +2,18 @@
 
 #### Basic usage:
 
-1\. Create class `SampleSettings` for example inside 
-`wordpress/wp-content/themes/your-theme/src/CustomSettings/SampleSettings.php`
-
-```php
-<?php
-declare(strict_types=1);
-
-namespace Grzechu\CustomSettings;
-
-use Grzechu\CustomSettings\SettingsBuilder\SampleSettingsBuilder;
-
-class SampleSettings extends Settings
-{
-    public function __construct() {
-        parent::__construct(
-            'Sample settings',
-            'sample_settings',
-            'dashicons-admin-post',
-            25,
-            SampleSettingsBuilder::class
-        );
-    }
-}
-```
-
-As you can see `SampleSettings` has to extends `Settings`.
-You can extend `renderPage` method to modify age rendering.
-
-2\. Create class `SampleSettingsBuilder` for example inside 
+1\. Create class `SampleSettingsBuilder` for example inside 
 `wordpress/wp-content/themes/your-theme/src/CustomSettings/SampleSettingsBuilder.php`
 
 ```php
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\CustomSettings\SettingsBuilder;
+namespace App\CustomSettings;
 
 use Grzechu\CustomSettings\SettingField\SettingFieldCollection;
 use Grzechu\CustomSettings\SettingField\TextareaField;
+use Grzechu\CustomSettings\SettingsBuilder\SettingsBuilder;
 use Grzechu\CustomSettings\SettingSection\SimpleSection;
 use Grzechu\CustomSettings\SettingSection\SettingSectionCollection;
 
@@ -106,6 +79,35 @@ class SampleSettingsBuilder extends SettingsBuilder
 
 As you can see `SampleSettingsBuilder` has to extends `SettingsBuilder`.
 You can add as many sections and fields inside `addSections` and `addFields` methods.
+
+2\. Create class `SampleSettings` for example inside 
+`wordpress/wp-content/themes/your-theme/src/CustomSettings/SampleSettings.php`
+
+```php
+<?php
+declare(strict_types=1);
+
+namespace App\CustomSettings;
+
+use App\CustomSettings\SampleSettingsBuilder;
+use Grzechu\CustomSettings\Settings;
+
+class SampleSettings extends Settings
+{
+    public function __construct() {
+        parent::__construct(
+            'Sample settings',
+            'sample_settings',
+            'dashicons-admin-post',
+            25,
+            SampleSettingsBuilder::class
+        );
+    }
+}
+```
+
+As you can see `SampleSettings` has to extends `Settings`.
+You can extend `renderPage` method to modify age rendering.
 
 3\. **That's it** - you should be able now to see and use *Sample settings* in wp-admin panel.
 
