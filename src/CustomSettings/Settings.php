@@ -69,11 +69,7 @@ abstract class Settings
                 <form action="options.php" method="post">
         HTML;
 
-        /** @var SettingField $field */
-        foreach ($this->builder->getFields() as $field) {
-            settings_fields($field->getSection());
-        }
-
+        settings_fields($this->pageSlug);
         do_settings_sections($this->pageSlug);
         submit_button('Save Settings');
 

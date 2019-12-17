@@ -2,16 +2,6 @@
 
 Library allow to build quicker some custom functionalities inside your wordpress theme without using plugins.
 
-## Current Version
-
-<a title="copy to clipboard" class="copy_on_clip" data-clipboard-target="#clip_all_markdown">
-    <img class="latest_stable_version_img" src="https://poser.pugx.org/grzegorz-jamroz/wp-extensions/v/stable">
-    <img class="total_img" src="https://poser.pugx.org/grzegorz-jamroz/wp-extensions/downloads">
-    <img class="latest_unstable_version_img" src="https://poser.pugx.org/grzegorz-jamroz/wp-extensions/v/unstable">
-    <img class="license_img" src="https://poser.pugx.org/grzegorz-jamroz/wp-extensions/license">
-    <img class="composer_img" src="/phpunit/phpunit/composerlock">
-</a>
-
 ## Requirements
 
 - PHP 7.3 ![php](https://img.shields.io/badge/php-7.3-blue)

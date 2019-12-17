@@ -32,11 +32,6 @@ abstract class SettingsBuilder
         $this->buildFields();
     }
 
-    public function getFields(): SettingFieldCollection
-    {
-        return $this->fields;
-    }
-
     abstract protected function addSections(SettingSectionCollection $sections): void;
     abstract protected function addFields(SettingFieldCollection $fields): void;
 
@@ -58,7 +53,7 @@ abstract class SettingsBuilder
         /** @var SettingField $field */
         foreach ($this->fields as $field) {
             register_setting(
-                $field->getSection(),
+                $this->pageSlug,
                 $field->getId(),
                 $field->getOption('settingArgs')
             );
