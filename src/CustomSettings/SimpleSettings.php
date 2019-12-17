@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace App\CustomSettings;
 
-use App\CustomSettings\SettingField\SettingField;
-use App\CustomSettings\SettingsBuilder\SampleSettingsBuilder;
+use Grzechu\SettingField\SettingField;
+use Grzechu\SettingsBuilder\SampleSettingsBuilder;
 
 class SimpleSettings extends Settings
 {

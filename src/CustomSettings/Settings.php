@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace App\CustomSettings;
 
-use App\CustomSettings\SettingField\SettingField;
-use App\CustomSettings\SettingField\SettingFieldCollection;
-use App\CustomSettings\SettingsBuilder\SettingsBuilder;
-use App\CustomSettings\SettingSection\SettingSectionCollection;
+use Grzechu\SettingField\SettingField;
+use Grzechu\SettingField\SettingFieldCollection;
+use Grzechu\SettingsBuilder\SettingsBuilder;
+use Grzechu\SettingSection\SettingSectionCollection;
 
 abstract class Settings
 {

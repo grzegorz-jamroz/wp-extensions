@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace App\CustomSettings\SettingsBuilder;
+namespace Grzechu\SettingsBuilder;
 
-use App\CustomSettings\SettingField\SettingField;
-use App\CustomSettings\SettingField\SettingFieldCollection;
-use App\CustomSettings\SettingSection\SettingSection;
-use App\CustomSettings\SettingSection\SettingSectionCollection;
+use Grzechu\SettingField\SettingField;
+use Grzechu\SettingField\SettingFieldCollection;
+use Grzechu\SettingSection\SettingSection;
+use Grzechu\SettingSection\SettingSectionCollection;
 
 abstract class SettingsBuilder
 {

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\CustomSettings\SettingField;
+namespace Grzechu\SettingField;
 
-use App\CustomSettings\SettingSection\SettingSectionCollection;
+use Grzechu\SettingSection\SettingSectionCollection;
 use ArrayIterator;
 use IteratorAggregate;
 

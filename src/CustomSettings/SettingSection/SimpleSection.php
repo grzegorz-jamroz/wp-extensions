@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\CustomSettings\SettingSection;
+namespace Grzechu\SettingSection;
 
 class SimpleSection extends SettingSection
 {

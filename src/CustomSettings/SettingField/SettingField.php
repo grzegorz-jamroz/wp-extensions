@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\CustomSettings\SettingField;
+namespace Grzechu\SettingField;
 
 abstract class SettingField
 {
