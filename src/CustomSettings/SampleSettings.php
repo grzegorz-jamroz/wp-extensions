@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Grzechu\CustomSettings;
 
-use Grzechu\SettingsBuilder\SampleSettingsBuilder;
+use Grzechu\CustomSettings\SettingsBuilder\SampleSettingsBuilder;
 
 class SampleSettings extends Settings
 {

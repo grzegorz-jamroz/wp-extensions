@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\SettingField;
+namespace Grzechu\CustomSettings\SettingField;
 
 class TextareaField extends SettingField
 {

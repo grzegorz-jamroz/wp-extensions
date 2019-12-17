@@ -1,12 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\SettingSection;
+namespace Grzechu\CustomSettings\SettingSection;
 
 use ArrayIterator;
-use Exception;
 use IteratorAggregate;
-use Traversable;
 
 class SettingSectionCollection implements IteratorAggregate
 {

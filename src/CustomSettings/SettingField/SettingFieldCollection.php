@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\SettingField;
+namespace Grzechu\CustomSettings\SettingField;
 
-use Grzechu\SettingSection\SettingSectionCollection;
+use Grzechu\CustomSettings\SettingSection\SettingSectionCollection;
 use ArrayIterator;
 use IteratorAggregate;
 

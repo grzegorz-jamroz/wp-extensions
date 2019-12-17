@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace Grzechu\CustomSettings;
 
-use Grzechu\SettingField\SettingField;
-use Grzechu\SettingField\SettingFieldCollection;
-use Grzechu\SettingsBuilder\SettingsBuilder;
-use Grzechu\SettingSection\SettingSectionCollection;
+use Grzechu\CustomSettings\SettingField\SettingField;
+use Grzechu\CustomSettings\SettingField\SettingFieldCollection;
+use Grzechu\CustomSettings\SettingsBuilder\SettingsBuilder;
+use Grzechu\CustomSettings\SettingSection\SettingSectionCollection;
 
 abstract class Settings
 {
