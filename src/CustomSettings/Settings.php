@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\CustomSettings;
+namespace Grzechu\CustomSettings;
 
 use Grzechu\SettingField\SettingField;
 use Grzechu\SettingField\SettingFieldCollection;

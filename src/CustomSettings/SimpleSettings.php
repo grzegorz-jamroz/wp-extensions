@@ -1,12 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace App\CustomSettings;
+namespace Grzechu\CustomSettings;
 
-use Grzechu\SettingField\SettingField;
 use Grzechu\SettingsBuilder\SampleSettingsBuilder;
 
-class SimpleSettings extends Settings
+class SampleSettings extends Settings
 {
     public function __construct() {
         parent::__construct(
