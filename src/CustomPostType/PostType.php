@@ -18,6 +18,7 @@ abstract class PostType
 
         add_action('init', [$this, 'register']);
         add_filter('allowed_block_types', [$this, 'allowed_block_types']);
+        add_action('add_meta_boxes', [$this, 'add_meta_boxes']);
     }
 
     public function register() {
@@ -47,12 +48,20 @@ abstract class PostType
         $post = get_post();
         $allowedBlockTypes = $this->args['allowed_block_types'] ?? null;
 
-        if ($allowedBlockTypes === null) {
+        if ($allowedBlockTypes === false) {
+            return false;
+        }
+
+        if ($allowedBlockTypes === null || $allowedBlockTypes === true) {
             return true;
         }
 
         if ($post->post_type === $this->postTypeKey) {
             return $allowedBlockTypes;
         }
+    }
+
+    function add_meta_boxes() {
+        remove_meta_box('slugdiv', $this->postTypeKey, 'normal');
     }
 }

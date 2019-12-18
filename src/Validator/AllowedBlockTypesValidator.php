@@ -10,24 +10,24 @@ use Symfony\Component\Validator\Exception\UnexpectedValueException;
 
 class AllowedBlockTypesValidator extends ConstraintValidator
 {
-    public function validate($values, Constraint $constraint)
+    public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof AllowedBlockTypes) {
             throw new UnexpectedTypeException($constraint, AllowedBlockTypes::class);
         }
 
-        if (null === $values) {
+        if (null === $value || is_bool($value)) {
             return;
         }
 
-        if (!is_array($values)) {
-            throw new UnexpectedValueException($values, 'array');
+        if (!is_array($value)) {
+            throw new UnexpectedValueException($value, 'array');
         }
 
-        foreach ($values as $value) {
-            if (!in_array($value, $this->getBlockTypes())) {
+        foreach ($value as $arg) {
+            if (!in_array($arg, $this->getBlockTypes())) {
                 $this->context->buildViolation($constraint->message)
-                    ->setParameter('{{ value }}', $value)
+                    ->setParameter('{{ value }}', $arg)
                     ->addViolation();
             }
         }
