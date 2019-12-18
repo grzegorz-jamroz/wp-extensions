@@ -25,3 +25,4 @@ composer require grzegorz-jamroz/wp-extensions
 # Usage
 
 - [Custom settings page](src/CustomSettings/README.md)
+- [Custom metabox](src/CustomMetabox/README.md)

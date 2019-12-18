@@ -24,9 +24,9 @@ abstract class Metabox
     private $builder;
 
     public function __construct(
+        string $builderClassName,
         string $id,
         string $title,
-        $builder,
         array $screens = [],
         string $context = 'advanced',
         string $priority = 'default',
@@ -37,7 +37,7 @@ abstract class Metabox
         $this->action = sprintf('%s_update', $id);
         $this->nonce = sprintf('%s_nonce', $id);
         $this->screens = $screens;
-        $this->setBuilder($builder);
+        $this->setBuilder($builderClassName);
         $this->setContext($context);
         $this->priority = $priority;
         $this->args = $args;
