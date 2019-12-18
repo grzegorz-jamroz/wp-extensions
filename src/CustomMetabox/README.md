@@ -23,16 +23,18 @@ class PostMetaboxBuilder extends MetaboxBuilder
         $fields->add(
             new TextField(
                 'post_password_field',
-                'Post password'
+                [
+                    'label' => 'Post password',
+                ]
             ),
             new DropdownField(
                 'post_show_footer_field',
-                'Footer',
                 [
                     'choices' => [
                         'hide' => 'Hide footer',
                         'show' => 'Show footer',
                     ],
+                    'label' => 'Footer',
                 ]
             )           
         );
