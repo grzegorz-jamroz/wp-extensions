@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\CustomMetabox\MetaboxField;
+namespace Grzechu\CustomMetabox\MetaboxField;
 
 use Grzechu\CustomMetabox\MetaboxField;
 use WP_Post;
