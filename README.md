@@ -22,6 +22,15 @@ Run [Composer](https://getcomposer.org) to install this package in your project:
 composer require grzegorz-jamroz/wp-extensions
 ```
 
+Remember to require `vendor/autoload.php` file in your code to enable the class autoloading mechanism provided by Composer.
+
+You can do it for example in the beginning of:
+`wordpress/wp-content/themes/your-theme/functions.php`
+
+```bash
+require_once __DIR__ . '/vendor/autoload.php';
+```
+
 # Usage
 
 - [Custom settings page](src/CustomSettings/README.md)
