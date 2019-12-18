@@ -8,16 +8,13 @@ use WP_Post;
 abstract class MetaboxField
 {
     protected $id;
-    protected $label;
     protected $options;
 
     public function __construct(
         string $id,
-        string $label,
         array $options = []
     ) {
         $this->id = $id;
-        $this->label = $label;
         $this->options = $options;
     }
 

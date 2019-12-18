@@ -12,7 +12,8 @@ declare(strict_types=1);
 namespace App\CustomMetabox;
 
 use Grzechu\CustomMetabox\MetaboxBuilder;
-use Grzechu\CustomMetabox\MetaboxField\DropdownField;use Grzechu\CustomMetabox\MetaboxField\TextField;
+use Grzechu\CustomMetabox\MetaboxField\DropdownField;
+use Grzechu\CustomMetabox\MetaboxField\TextField;
 use Grzechu\CustomMetabox\MetaboxFieldCollection;
 
 class PostMetaboxBuilder extends MetaboxBuilder
@@ -87,4 +88,66 @@ Parameters which constructor takes are described below:
 | string $priority = 'default' | Optional. The priority within the context where the boxes should show ('high', 'low'). Default 'default'. |
 | array $args = []             | Optional. Data that should be set as the $args property of the box array (which is the second parameter passed to your callback). |
 
+#### MetaboxField:
+| Parameter           | Description                      |
+|---------------------|----------------------------------|
+| string $id          | This is the same as Metadata key. It will be stored inside table `wp_postmeta` under field `meta_key` |
+| array $options = [] | Additional options which you can pass to your field. For example you can pass `choices` to DropdownFields  |
+
 #### Create own metabox field types:
+
+1\. Create class `EmailField` for example inside 
+`wordpress/wp-content/themes/your-theme/src/CustomMetabox/MetaboxField/EmailField.php`
+
+```php
+<?php
+declare(strict_types=1);
+
+namespace App\CustomMetabox\MetaboxField;
+
+use Grzechu\CustomMetabox\MetaboxField;
+use WP_Post;
+
+class EmailField extends MetaboxField
+{
+    public function html(WP_Post $post): string
+    {
+        $value = esc_attr(get_post_meta($post->ID, $this->id, true));
+
+        return <<<HTML
+            <p class="post-attributes-label-wrapper">
+                <p class="post-attributes-label-wrapper"><strong>$this->label</strong></p>
+                <input type="email" name="$this->id" id="$this->id" value="$value" />
+            </p>
+        HTML;
+    }
+}
+```
+
+Your custom fields has to extends `MetaboxField`.
+
+2\. You can use it inside your builder
+
+```php
+<?php
+declare(strict_types=1);
+
+namespace App\CustomMetabox;
+
+use App\CustomMetabox\MetaboxField\EmailField;
+use Grzechu\CustomMetabox\MetaboxBuilder;
+use Grzechu\CustomMetabox\MetaboxFieldCollection;
+
+class PostMetaboxBuilder extends MetaboxBuilder
+{
+    protected function addFields(MetaboxFieldCollection $fields): void
+    {
+        $fields->add(
+            new EmailField(
+                'post_email_field',
+                'Post email'
+            )   
+        );
+    }
+}
+```

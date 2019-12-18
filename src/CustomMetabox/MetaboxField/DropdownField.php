@@ -12,10 +12,11 @@ class DropdownField extends MetaboxField
     {
         $value = esc_attr(get_post_meta($post->ID, $this->id, true));
         $choices = $this->getChoices($value);
+        $label = sprintf('<p class="post-attributes-label-wrapper"><strong>%s</strong></p>', $this->getOption('label'));
 
         return <<<HTML
             <p class="post-attributes-label-wrapper">
-                <p class="post-attributes-label-wrapper"><strong>$this->label</strong></p>
+                $label
                 <select name="$this->id" id="$this->id">
                     $choices
                 </select>

@@ -11,10 +11,11 @@ class TextField extends MetaboxField
     public function html(WP_Post $post): string
     {
         $value = esc_attr(get_post_meta($post->ID, $this->id, true));
+        $label = sprintf('<p class="post-attributes-label-wrapper"><strong>%s</strong></p>', $this->getOption('label'));
 
         return <<<HTML
             <p class="post-attributes-label-wrapper">
-                <p class="post-attributes-label-wrapper"><strong>$this->label</strong></p>
+                $label
                 <input type="text" name="$this->id" id="$this->id" value="$value" />
             </p>
         HTML;
