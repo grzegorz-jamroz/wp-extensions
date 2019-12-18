@@ -9,13 +9,16 @@ abstract class MetaboxField
 {
     protected $id;
     protected $label;
+    protected $options;
 
     public function __construct(
         string $id,
-        string $label
+        string $label,
+        array $options = []
     ) {
         $this->id = $id;
         $this->label = $label;
+        $this->options = $options;
     }
 
     abstract public function html(WP_Post $post): string;
@@ -23,6 +26,11 @@ abstract class MetaboxField
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function getOption(string $option)
+    {
+        return $this->options[$option] ?? null;
     }
 
     public function save(WP_Post $post)
