@@ -21,11 +21,11 @@ abstract class Settings
     protected $builder;
 
     public function __construct(
-        $pluralLabel,
-        $pageSlug,
-        $icon,
-        $position,
-        $builderClass
+        string $pluralLabel,
+        string $pageSlug,
+        string $icon,
+        int $position,
+        string $builderClass
     ) {
         $this->pluralLabel = $pluralLabel;
         $this->pageSlug = $pageSlug;
