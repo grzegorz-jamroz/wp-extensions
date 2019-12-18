@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace Grzechu\CustomPostType;
 
-use App\CustomPostType\PostTypeValidator;
-
 abstract class PostType
 {
     private $postTypeKey;

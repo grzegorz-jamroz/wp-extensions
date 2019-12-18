@@ -1,9 +1,8 @@
 <?php
 declare(strict_types=1);
 
-namespace App\CustomPostType;
+namespace Grzechu\CustomPostType;
 
-use Grzechu\CustomPostType\PostType;
 use Grzechu\Validator\AllowedBlockTypes;
 use Grzechu\Validator\Slug;
 use Symfony\Component\Validator\Constraints\Length;
