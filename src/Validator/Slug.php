@@ -7,5 +7,5 @@ use Symfony\Component\Validator\Constraint;
 
 class Slug extends Constraint
 {
-    public $message = 'The value "{{ value }}" is not valid.';
+    public $message = 'The value "{{ value }}" is not valid. It can contains only lowercase alphanumeric characters, dashes, and underscores.';
 }
