@@ -10,6 +10,7 @@ use Symfony\Component\Asset\Package;
 use Symfony\Component\Asset\VersionStrategy\EmptyVersionStrategy;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
+use Twig\Loader\LoaderInterface;
 use Twig\TwigFunction;
 
 class TwigEngine
@@ -24,10 +25,9 @@ class TwigEngine
      */
     private $twig;
 
-    public function __construct()
+    public function __construct(LoaderInterface $loader)
     {
         $this->package = new Package(new EmptyVersionStrategy());
-        $loader = new FilesystemLoader(dirname(__DIR__) . '/../../templates');
         $this->twig = new Environment($loader);
         $this->addExtensions();
     }
