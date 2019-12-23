@@ -3,13 +3,13 @@ declare(strict_types=1);
 
 namespace Grzechu\Utilities\Twig;
 
+use Grzechu\Utilities\Twig\Extension\CarbonFieldExtensions;
 use Grzechu\Utilities\Twig\Extension\SymfonyExtensions;
 use Grzechu\Utilities\Twig\Extension\WebpackExtension;
 use Grzechu\Utilities\Twig\Extension\WordpressExtensions;
 use Symfony\Component\Asset\Package;
 use Symfony\Component\Asset\VersionStrategy\EmptyVersionStrategy;
 use Twig\Environment;
-use Twig\Loader\FilesystemLoader;
 use Twig\Loader\LoaderInterface;
 use Twig\TwigFunction;
 
@@ -60,5 +60,10 @@ class TwigEngine
         $symfonyExtensions = new SymfonyExtensions();
         $this->twig->addFunction(new TwigFunction('dump', [$symfonyExtensions, 'dump']));
         $this->twig->addFunction(new TwigFunction('asset', [$symfonyExtensions, 'getAssetUrl']));
+
+
+        // Carbon Field extensions
+        $symfonyExtensions = new CarbonFieldExtensions();
+        $this->twig->addFunction(new TwigFunction('carbon_get_theme_option', [$symfonyExtensions, 'carbon_get_theme_option']));
     }
 }
