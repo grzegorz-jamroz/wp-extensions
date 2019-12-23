@@ -66,4 +66,9 @@ class TwigEngine
         $symfonyExtensions = new CarbonFieldExtensions();
         $this->twig->addFunction(new TwigFunction('carbon_get_theme_option', [$symfonyExtensions, 'carbon_get_theme_option']));
     }
+
+    protected function addFunction(TwigFunction $twigFunction): void
+    {
+        $this->twig->addFunction($twigFunction);
+    }
 }
