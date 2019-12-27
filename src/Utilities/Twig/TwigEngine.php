@@ -63,8 +63,9 @@ class TwigEngine
 
 
         // Carbon Field extensions
-        $symfonyExtensions = new CarbonFieldExtensions();
-        $this->twig->addFunction(new TwigFunction('carbon_get_theme_option', [$symfonyExtensions, 'carbon_get_theme_option']));
+        $carbonFieldExtensions = new CarbonFieldExtensions();
+        $this->twig->addFunction(new TwigFunction('carbon_get_theme_option', [$carbonFieldExtensions, 'carbon_get_theme_option']));
+        $this->twig->addFunction(new TwigFunction('carbon_get_post_meta', [$carbonFieldExtensions, 'carbon_get_post_meta']));
     }
 
     protected function addFunction(TwigFunction $twigFunction): void
