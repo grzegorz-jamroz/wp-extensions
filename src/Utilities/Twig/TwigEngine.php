@@ -55,6 +55,8 @@ class TwigEngine
         $this->twig->addFunction(new TwigFunction('wp_footer', [$wordpressExtensions, 'wp_footer']));
         $this->twig->addFunction(new TwigFunction('wp_title', [$wordpressExtensions, 'wp_title']));
         $this->twig->addFunction(new TwigFunction('get_post_meta', [$wordpressExtensions, 'get_post_meta']));
+        $this->twig->addFunction(new TwigFunction('is_active_sidebar', [$wordpressExtensions, 'is_active_sidebar']));
+        $this->twig->addFunction(new TwigFunction('dynamic_sidebar', [$wordpressExtensions, 'dynamic_sidebar']));
 
         // Symfony extensions
         $symfonyExtensions = new SymfonyExtensions();

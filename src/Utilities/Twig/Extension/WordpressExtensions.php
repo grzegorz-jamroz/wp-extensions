@@ -39,4 +39,14 @@ class WordpressExtensions
     {
         return get_post_meta($post_id, $key, $single);
     }
+
+    public function is_active_sidebar($index)
+    {
+        return is_active_sidebar($index);
+    }
+
+    public function dynamic_sidebar($index = 1)
+    {
+        return dynamic_sidebar($index);
+    }
 }
