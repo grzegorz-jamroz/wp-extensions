@@ -47,6 +47,6 @@ class WordpressExtensions
 
     public function dynamic_sidebar($index = 1)
     {
-        return dynamic_sidebar($index);
+        dynamic_sidebar($index);
     }
 }
