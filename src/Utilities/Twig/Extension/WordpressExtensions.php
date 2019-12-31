@@ -49,4 +49,8 @@ class WordpressExtensions
     {
         dynamic_sidebar($index);
     }
+
+    public function home_url($path = '', $scheme = null) {
+        return home_url($path, $scheme);
+    }
 }

@@ -57,6 +57,7 @@ class TwigEngine
         $this->twig->addFunction(new TwigFunction('get_post_meta', [$wordpressExtensions, 'get_post_meta']));
         $this->twig->addFunction(new TwigFunction('is_active_sidebar', [$wordpressExtensions, 'is_active_sidebar']));
         $this->twig->addFunction(new TwigFunction('dynamic_sidebar', [$wordpressExtensions, 'dynamic_sidebar']));
+        $this->twig->addFunction(new TwigFunction('home_url', [$wordpressExtensions, 'home_url']));
 
         // Symfony extensions
         $symfonyExtensions = new SymfonyExtensions();
