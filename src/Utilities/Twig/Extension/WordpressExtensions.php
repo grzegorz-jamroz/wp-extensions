@@ -53,4 +53,8 @@ class WordpressExtensions
     public function home_url($path = '', $scheme = null) {
         return home_url($path, $scheme);
     }
+
+    public function admin_url($path = '', $scheme = 'admin') {
+        return admin_url($path, $scheme);
+    }
 }
