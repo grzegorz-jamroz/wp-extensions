@@ -33,7 +33,7 @@ class TaxonomyValidator
     private function validateTaxonomyKey()
     {
         $violations = $this->validator->validate(
-            $this->taxonomy->getPostTypeKey(),
+            $this->taxonomy->getTaxonomyKey(),
             [
                 new NotBlank(),
                 new Slug(),
