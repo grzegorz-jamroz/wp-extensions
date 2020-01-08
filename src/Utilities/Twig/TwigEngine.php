@@ -59,6 +59,7 @@ class TwigEngine
         $this->twig->addFunction(new TwigFunction('dynamic_sidebar', [$wordpressExtensions, 'dynamic_sidebar']));
         $this->twig->addFunction(new TwigFunction('home_url', [$wordpressExtensions, 'home_url']));
         $this->twig->addFunction(new TwigFunction('admin_url', [$wordpressExtensions, 'admin_url']));
+        $this->twig->addFunction(new TwigFunction('wp_create_nonce', [$wordpressExtensions, 'wp_create_nonce']));
 
         // Symfony extensions
         $symfonyExtensions = new SymfonyExtensions();

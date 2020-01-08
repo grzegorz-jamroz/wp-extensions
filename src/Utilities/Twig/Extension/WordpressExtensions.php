@@ -57,4 +57,8 @@ class WordpressExtensions
     public function admin_url($path = '', $scheme = 'admin') {
         return admin_url($path, $scheme);
     }
+
+    function wp_create_nonce($action = -1) {
+        return wp_create_nonce($action);
+    }
 }
