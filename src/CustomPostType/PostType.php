@@ -5,36 +5,25 @@ namespace Grzechu\CustomPostType;
 
 abstract class PostType
 {
-    private $postTypeKey;
-    private $args;
+    protected $postTypeKey;
+    protected $args;
+    private static $instance;
 
-    public function __construct(
-        string $postTypeKey,
-        array $args = []
-    ) {
-        $this->postTypeKey = $postTypeKey;
-        $this->args = $args;
-        (new PostTypeValidator($this))->validate();
+    public static function getInstance(): self
+    {
+        if (static::$instance === null) {
+            static::$instance = new static();
+        }
 
-        add_action('init', [$this, 'register']);
-        add_filter('allowed_block_types', [$this, 'allowed_block_types']);
+        return static::$instance;
     }
 
-    public function register() {
-        register_post_type(
-            $this->postTypeKey,
-            $this->args
-        );
-    }
+    abstract public function getArgs(): array;
+    abstract public function getPostTypeKey(): string;
 
     public function __toString()
     {
         return self::class;
-    }
-
-    public function getPostTypeKey(): string
-    {
-        return $this->postTypeKey;
     }
 
     public function getArg(string $arg)
@@ -45,18 +34,48 @@ abstract class PostType
     public function allowed_block_types()
     {
         $post = get_post();
-        $allowedBlockTypes = $this->args['allowed_block_types'] ?? null;
+        $allowedBlockTypes = $this->getArg('allowed_block_types');
 
         if ($allowedBlockTypes === false) {
             return false;
         }
 
-        if ($allowedBlockTypes === null || $allowedBlockTypes === true) {
+        if ($allowedBlockTypes === null) {
+            return true;
+        }
+
+        if ($allowedBlockTypes === true) {
             return true;
         }
 
         if ($post->post_type === $this->postTypeKey) {
             return $allowedBlockTypes;
         }
+
+        return true;
+    }
+
+    final private function __construct()
+    {
+        $this->postTypeKey = $this->getPostTypeKey();
+        $this->args = $this->getArgs();
+
+        (new PostTypeValidator($this))->validate();
+
+        add_action('init', function() {
+            register_post_type(
+                $this->postTypeKey,
+                $this->args
+            );
+        });
+        add_filter('allowed_block_types', [$this, 'allowed_block_types']);
+    }
+
+    final private function __clone()
+    {
+    }
+
+    final private function __wakeup()
+    {
     }
 }
