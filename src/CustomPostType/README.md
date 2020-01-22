@@ -9,7 +9,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\CustomPostType;
+namespace App\CustomPostType;
+
+use Grzechu\CustomPostType\PostType;
 
 class MoviePostType extends PostType
 {
@@ -45,7 +47,6 @@ class MoviePostType extends PostType
         return 'movie';
     }
 }
-
 ```
 
 As you can see `MoviePostType` has to extends `PostType`.
