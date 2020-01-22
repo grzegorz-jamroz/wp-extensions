@@ -33,5 +33,4 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 # Usage
 
-- [Custom settings page](src/CustomSettings/README.md)
-- [Custom metabox](src/CustomMetabox/README.md)
+- [Custom Post Type](src/CustomPostType/README.md)
