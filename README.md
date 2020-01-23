@@ -34,3 +34,4 @@ require_once __DIR__ . '/vendor/autoload.php';
 # Usage
 
 - [Custom Post Type](src/CustomPostType/README.md)
+- [Custom Taxonomy](src/CustomTaxonomy/README.md)
