@@ -67,7 +67,7 @@ abstract class PostType
 
         (new PostTypeValidator($this))->validate();
 
-        add_action('init', function () {
+        add_action('init', function() {
             register_post_type(
                 $this->postTypeKey,
                 $this->args
@@ -88,6 +88,8 @@ abstract class PostType
     {
         $singular = $this->getSingularName();
         $plural = $this->getPluralName();
+        $singularToLower = strtolower($singular);
+        $pluralToLower = strtolower($plural);
 
         return [
             'name' => $plural,
@@ -99,19 +101,19 @@ abstract class PostType
             'view_item' => sprintf('View %s', $singular),
             'view_items' => sprintf('View %s', $plural),
             'search_items' => sprintf('Search %s', $plural),
-            'not_found' => sprintf('No %s found.', strtolower($plural)),
-            'not_found_in_trash' => sprintf('No %s found in Trash.', strtolower($plural)),
+            'not_found' => sprintf('No %s found.', $pluralToLower),
+            'not_found_in_trash' => sprintf('No %s found in Trash.', $pluralToLower),
             'parent_item_colon' => sprintf('Parent %s:', $singular),
             'all_items' => sprintf('All %s', $plural),
             'archives' => sprintf('%s Archives', $singular),
             'attributes' => sprintf('%s Attributes', $singular),
-            'insert_into_item' => sprintf('Insert into %s', strtolower($singular)),
-            'uploaded_to_this_item' => sprintf('Uploaded to this %s', strtolower($singular)),
+            'insert_into_item' => sprintf('Insert into %s', $singularToLower),
+            'uploaded_to_this_item' => sprintf('Uploaded to this %s', $singularToLower),
             'featured_image' => 'Featured Image',
             'set_featured_image' => 'Set featured image',
             'remove_featured_image' => 'Remove featured image',
             'use_featured_image' => 'Use as featured image',
-            'filter_items_list' => sprintf('Filter %s list', strtolower($plural)),
+            'filter_items_list' => sprintf('Filter %s list', $pluralToLower),
             'items_list_navigation' => sprintf('%s list navigation', $plural),
             'items_list' => sprintf('%s list', $plural),
             'item_published' => sprintf('%s published.', $singular),
