@@ -4,8 +4,8 @@ Library allow to build quicker some custom functionalities inside your wordpress
 
 ## Requirements
 
-- PHP 7.3 ![php](https://img.shields.io/badge/php-7.3-blue)
-- Wordpress 5.3: ![version](https://img.shields.io/badge/wordpress-5.3-yellow)
+- PHP 7.3 > ![php](https://img.shields.io/badge/php-7.3%20>-blue)
+- Wordpress 5.3 >: ![version](https://img.shields.io/badge/wordpress-5.3%20>-yellow)
 
 
 # Installation
