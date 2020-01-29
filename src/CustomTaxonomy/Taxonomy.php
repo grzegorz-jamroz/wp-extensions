@@ -8,15 +8,17 @@ abstract class Taxonomy
     private $postTypes;
     private $taxonomyKey;
     private $args = [];
-    private static $instance;
+    private static $instances;
 
-    public static function getInstance(): self
+    final public static function getInstance(): self
     {
-        if (static::$instance === null) {
-            static::$instance = new static();
+        $className = get_called_class();
+
+        if (isset(self::$instances[$className]) === false) {
+            self::$instances[$className] = new static();
         }
 
-        return static::$instance;
+        return self::$instances[$className];
     }
 
     abstract public function getTaxonomyKey(): string;
