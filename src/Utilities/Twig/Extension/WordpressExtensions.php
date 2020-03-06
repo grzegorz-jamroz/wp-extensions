@@ -69,4 +69,11 @@ class WordpressExtensions
     {
         return esc_url($url, $protocols, $_context);
     }
+
+    public function wp_nav_menu($args = [])
+    {
+        $args['echo'] = false;
+
+        return wp_nav_menu($args);
+    }
 }
