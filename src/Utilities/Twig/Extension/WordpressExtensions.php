@@ -50,15 +50,23 @@ class WordpressExtensions
         dynamic_sidebar($index);
     }
 
-    public function home_url($path = '', $scheme = null) {
+    public function home_url($path = '', $scheme = null)
+    {
         return home_url($path, $scheme);
     }
 
-    public function admin_url($path = '', $scheme = 'admin') {
+    public function admin_url($path = '', $scheme = 'admin')
+    {
         return admin_url($path, $scheme);
     }
 
-    function wp_create_nonce($action = -1) {
+    public function wp_create_nonce($action = -1)
+    {
         return wp_create_nonce($action);
+    }
+
+    public function esc_url($url, $protocols = null, $_context = 'display')
+    {
+        return esc_url($url, $protocols, $_context);
     }
 }
