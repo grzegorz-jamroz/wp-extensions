@@ -76,4 +76,9 @@ class WordpressExtensions
 
         return wp_nav_menu($args);
     }
+
+    public function has_nav_menu($location)
+    {
+        return has_nav_menu($location);
+    }
 }
