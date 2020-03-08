@@ -63,6 +63,7 @@ class TwigEngine
         $this->twig->addFunction(new TwigFunction('esc_url', [$wordpressExtensions, 'esc_url']));
         $this->twig->addFunction(new TwigFunction('wp_nav_menu', [$wordpressExtensions, 'wp_nav_menu']));
         $this->twig->addFunction(new TwigFunction('has_nav_menu', [$wordpressExtensions, 'has_nav_menu']));
+        $this->twig->addFunction(new TwigFunction('get_theme_mod', [$wordpressExtensions, 'get_theme_mod']));
 
         // Symfony extensions
         $symfonyExtensions = new SymfonyExtensions();

@@ -81,4 +81,9 @@ class WordpressExtensions
     {
         return has_nav_menu($location);
     }
+
+    public function get_theme_mod($name, $default = false)
+    {
+        return get_theme_mod($name, $default);
+    }
 }
