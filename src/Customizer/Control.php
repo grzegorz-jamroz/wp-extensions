@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Grzechu\Customizer;
 
-abstract class Control implements ControlInterface
+abstract class Control
 {
     private static $instances;
 
@@ -37,6 +37,8 @@ abstract class Control implements ControlInterface
             $this->getArgs()
         );
     }
+
+    abstract public function getSetting(): Setting;
 
     public function getArgs(): array
     {

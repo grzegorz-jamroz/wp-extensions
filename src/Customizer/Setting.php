@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Grzechu\Customizer;
 
-abstract class Setting implements SettingInterface
+abstract class Setting
 {
     private static $instances;
 
@@ -41,6 +41,8 @@ abstract class Setting implements SettingInterface
             $this->getArgs()
         );
     }
+
+    abstract public function getSettingId(): string;
 
     public function getArgs(): array
     {
