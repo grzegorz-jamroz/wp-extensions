@@ -94,6 +94,6 @@ class WordpressExtensions
 
     public function wp_logout_url($redirect = '')
     {
-        return wp_logout_url($redirect);
+        return str_replace('&amp;', '&', wp_logout_url($redirect));
     }
 }
