@@ -64,6 +64,7 @@ class TwigEngine
         $this->twig->addFunction(new TwigFunction('wp_nav_menu', [$wordpressExtensions, 'wp_nav_menu']));
         $this->twig->addFunction(new TwigFunction('has_nav_menu', [$wordpressExtensions, 'has_nav_menu']));
         $this->twig->addFunction(new TwigFunction('get_theme_mod', [$wordpressExtensions, 'get_theme_mod']));
+        $this->twig->addFunction(new TwigFunction('is_user_logged_in', [$wordpressExtensions, 'is_user_logged_in']));
 
         // Symfony extensions
         $symfonyExtensions = new SymfonyExtensions();

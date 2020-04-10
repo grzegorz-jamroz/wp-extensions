@@ -86,4 +86,9 @@ class WordpressExtensions
     {
         return get_theme_mod($name, $default);
     }
+
+    public function is_user_logged_in()
+    {
+        return is_user_logged_in();
+    }
 }
