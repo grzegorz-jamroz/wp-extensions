@@ -91,4 +91,9 @@ class WordpressExtensions
     {
         return is_user_logged_in();
     }
+
+    public function wp_logout_url($redirect = '')
+    {
+        return wp_logout_url($redirect);
+    }
 }
