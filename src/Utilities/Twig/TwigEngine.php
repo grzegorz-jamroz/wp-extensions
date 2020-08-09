@@ -66,6 +66,7 @@ class TwigEngine
         $this->twig->addFunction(new TwigFunction('get_theme_mod', [$wordpressExtensions, 'get_theme_mod']));
         $this->twig->addFunction(new TwigFunction('is_user_logged_in', [$wordpressExtensions, 'is_user_logged_in']));
         $this->twig->addFunction(new TwigFunction('wp_logout_url', [$wordpressExtensions, 'wp_logout_url']));
+        $this->twig->addFunction(new TwigFunction('translate', [$wordpressExtensions, 'translate']));
 
         // Symfony extensions
         $symfonyExtensions = new SymfonyExtensions();

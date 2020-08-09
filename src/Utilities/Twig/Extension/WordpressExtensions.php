@@ -96,4 +96,9 @@ class WordpressExtensions
     {
         return str_replace('&amp;', '&', wp_logout_url($redirect));
     }
+
+    public function translate(string $text, string $translators = '')
+    {
+        return translate($text, THEME_TEXT_DOMAIN);
+    }
 }
