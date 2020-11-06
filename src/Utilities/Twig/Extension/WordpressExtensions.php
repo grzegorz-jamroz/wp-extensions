@@ -15,9 +15,9 @@ class WordpressExtensions
         echo sprintf('class="%s"', join(' ', get_body_class( $class )));
     }
 
-    public function bloginfo(string $show = ''): void
+    public function bloginfo(string $show = ''): string
     {
-        echo get_bloginfo($show, 'display');
+        return get_bloginfo($show, 'display');
     }
 
     public function wp_head(): void
