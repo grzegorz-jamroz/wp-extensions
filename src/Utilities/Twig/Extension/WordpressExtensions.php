@@ -20,6 +20,11 @@ class WordpressExtensions
         return get_bloginfo($show, 'display');
     }
 
+    public function blogname_slug(string $show = ''): string
+    {
+        return sanitize_title(get_bloginfo('', 'display'));
+    }
+
     public function wp_head(): void
     {
         wp_head();
