@@ -2,7 +2,7 @@
   "name": "grzegorz-jamroz/wp-extensions",
   "description": "Library contains some classes which allow to prepare easy and quick custom settings pages.",
   "require": {
-    "php": "^7.4",
+    "php": ">=7.4",
     "symfony/validator": "^5.0"
   },
   "autoload": {
