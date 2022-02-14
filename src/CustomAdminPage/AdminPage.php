@@ -148,7 +148,7 @@ abstract class AdminPage
     {
     }
 
-    final private function __wakeup()
+    final public function __wakeup()
     {
     }
 }
