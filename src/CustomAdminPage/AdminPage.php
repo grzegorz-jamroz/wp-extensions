@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Grzechu\CustomAdminPage;
 
+use PlainDataTransformer\Transform;
+
 abstract class AdminPage
 {
     private static $instances;
@@ -67,12 +69,15 @@ abstract class AdminPage
         $this->iconUrl = $this->getIconUrl();
         $this->position = $this->getPosition();
         $this->parentSlug = $this->getParentSlug();
+        $this->parentSlug = $this->getParentSlug();
 
-        add_action(
-            'in_admin_header',
-            [$this, 'dismissAllNotices'],
-            1000
-        );
+        add_action('in_admin_header', [$this, 'dismissAllNotices'], 1000);
+
+        if ($this->isPageActive()) {
+            add_filter('admin_body_class', [$this, 'addBodyClasses'], 1000);
+            add_action('in_admin_header', [$this, 'embedPageHeader'], 1000);
+        }
+
         $this->registerMenu();
 
     }
@@ -81,6 +86,8 @@ abstract class AdminPage
     abstract public function getMenuTitle(): string;
     abstract public function getCapability(): string;
     abstract public function getMenuSlug(): string;
+    abstract public function getBodyClasses(): array;
+    abstract public function getPageHeaderHtml(): string;
     abstract public function callableFunction();
 
     public function getPosition(): int
@@ -142,6 +149,33 @@ abstract class AdminPage
         }
 
         add_action('admin_menu', [$this, 'adminMenu']);
+    }
+
+    public function addBodyClasses(string $classes): string
+    {
+        $classes = explode(' ', $classes);
+
+        foreach ($this->getBodyClasses() as $newClass) {
+            $class = Transform::toString($newClass ?? '');
+
+            if ($class === '') {
+                continue;
+            }
+
+            $classes[] = $class;
+        }
+
+        return implode(' ', $classes);
+    }
+
+    public function embedPageHeader(): void
+    {
+        echo $this->getPageHeaderHtml();
+    }
+
+    private function isPageActive(): bool
+    {
+        return isset($_GET['page']) && $_GET['page'] === $this->getMenuSlug();
     }
 
     final private function __clone()

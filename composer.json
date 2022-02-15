@@ -3,7 +3,8 @@
   "description": "Library contains some classes which allow to prepare easy and quick custom settings pages.",
   "require": {
     "php": ">=7.4",
-    "symfony/validator": "^5.0"
+    "symfony/validator": "^5.0",
+    "grzegorz-jamroz/plain-data-transformer": "^0.0.2"
   },
   "autoload": {
     "psr-4": {
