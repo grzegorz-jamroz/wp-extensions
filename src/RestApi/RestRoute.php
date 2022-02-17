@@ -25,12 +25,8 @@ abstract class RestRoute
         return home_url($url);
     }
 
-    protected function getNamespace(): string
-    {
-        return sprintf('%s/v1', wp_get_theme()->template);
-    }
-
-    abstract public function __invoke();
+    abstract public function __invoke(\WP_REST_Request $request);
+    abstract public function getNamespace(): string;
     abstract protected function getRoute(): string;
     abstract protected function getArgs(): array;
 
