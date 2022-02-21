@@ -20,9 +20,12 @@ abstract class RestRoute
 
     public function __toString()
     {
-        $url = sprintf('/wp-json/%s%s', $this->getNamespace(), $this->getRoute());
+        return $this->getUrl();
+    }
 
-        return home_url($url);
+    public function getUrl(): string
+    {
+        return sprintf('%s/?rest_route=/%s%s', get_site_url() , $this->getNamespace(), $this->getRoute());
     }
 
     abstract public function __invoke(\WP_REST_Request $request);
