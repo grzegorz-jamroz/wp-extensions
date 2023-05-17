@@ -45,7 +45,7 @@ abstract class Control
         return [];
     }
 
-    final private function __clone()
+    private function __clone()
     {
     }
 

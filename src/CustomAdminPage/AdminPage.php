@@ -178,7 +178,7 @@ abstract class AdminPage
         return isset($_GET['page']) && $_GET['page'] === $this->getMenuSlug();
     }
 
-    final private function __clone()
+    private function __clone()
     {
     }
 

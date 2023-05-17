@@ -78,7 +78,7 @@ abstract class PostType
         add_filter('allowed_block_types', [$this, 'allowed_block_types']);
     }
 
-    final private function __clone()
+    private function __clone()
     {
     }
 

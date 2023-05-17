@@ -49,7 +49,7 @@ abstract class Setting
         return [];
     }
 
-    final private function __clone()
+    private function __clone()
     {
     }
 
