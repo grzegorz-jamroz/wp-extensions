@@ -184,5 +184,6 @@ abstract class AdminPage
 
     final public function __wakeup()
     {
+        throw new \Exception("Cannot unserialize");
     }
 }

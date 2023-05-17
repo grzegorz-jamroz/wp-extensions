@@ -82,7 +82,8 @@ abstract class Taxonomy
     {
     }
 
-    final private function __wakeup()
+    final public function __wakeup()
     {
+        throw new \Exception("Cannot unserialize");
     }
 }
