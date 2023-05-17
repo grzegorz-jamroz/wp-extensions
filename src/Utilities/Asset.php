@@ -26,6 +26,6 @@ class Asset
         $path = glob($path)[0] ?? sprintf('%s/%s.%s', $this->entrypointName, $this->entryName, $this->extension);
         $path = str_replace(get_template_directory(), '', $path);
 
-        return sprintf('%s/%s', get_template_directory_uri(), $path);
+        return sprintf('%s%s', get_template_directory_uri(), $path);
     }
 }
