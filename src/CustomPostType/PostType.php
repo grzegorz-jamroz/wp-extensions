@@ -75,7 +75,7 @@ abstract class PostType
                 $this->args
             );
         });
-        add_filter('allowed_block_types', [$this, 'allowed_block_types']);
+        add_filter('allowed_block_types_all', [$this, 'allowed_block_types']);
     }
 
     private function __clone()
