@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\CustomAdminPage;
+namespace RockujemyWpExt\CustomAdminPage;
 
 use PlainDataTransformer\Transform;
 

@@ -8,5 +8,6 @@
     - add handle method
     - remove getErrorMessages method
 - improve handle method in [SimpleCommandBus](src/Utilities/SimpleCommandBus/SimpleCommandBus.php)
+- new project namespace
 
 [v1.0.0]: https://github.com/grzegorz-jamroz/wp-extensions/releases/tag/v1.0.0]

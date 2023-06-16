@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\Utilities\Twig\Extension;
+namespace RockujemyWpExt\Utilities\Twig\Extension;
 
 class WordpressExtensions
 {

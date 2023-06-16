@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace App\CustomPostType;
 
-use Grzechu\CustomPostType\PostType;
+use RockujemyWpExt\CustomPostType\PostType;
 
 class MoviePostType extends PostType
 {

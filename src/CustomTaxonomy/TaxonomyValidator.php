@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\CustomTaxonomy;
+namespace RockujemyWpExt\CustomTaxonomy;
 
-use Grzechu\Validator\Slug;
+use RockujemyWpExt\Validator\Slug;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\ConstraintViolationList;

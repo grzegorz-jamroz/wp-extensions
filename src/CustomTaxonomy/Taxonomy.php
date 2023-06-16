@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\CustomTaxonomy;
+namespace RockujemyWpExt\CustomTaxonomy;
 
 abstract class Taxonomy
 {

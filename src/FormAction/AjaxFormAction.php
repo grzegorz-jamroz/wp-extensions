@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\FormAction;
+namespace RockujemyWpExt\FormAction;
 
 abstract class AjaxFormAction extends FormAction
 {

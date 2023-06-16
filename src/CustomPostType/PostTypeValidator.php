@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\CustomPostType;
+namespace RockujemyWpExt\CustomPostType;
 
-use Grzechu\Validator\AllowedBlockTypes;
-use Grzechu\Validator\Slug;
+use RockujemyWpExt\Validator\AllowedBlockTypes;
+use RockujemyWpExt\Validator\Slug;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\ConstraintViolationList;

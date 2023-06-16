@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\Utilities\Twig;
+namespace RockujemyWpExt\Utilities\Twig;
 
-use Grzechu\Utilities\Twig\Extension\CarbonFieldExtensions;
-use Grzechu\Utilities\Twig\Extension\SymfonyExtensions;
-use Grzechu\Utilities\Twig\Extension\WebpackExtension;
-use Grzechu\Utilities\Twig\Extension\WordpressExtensions;
+use RockujemyWpExt\Utilities\Twig\Extension\CarbonFieldExtensions;
+use RockujemyWpExt\Utilities\Twig\Extension\SymfonyExtensions;
+use RockujemyWpExt\Utilities\Twig\Extension\WebpackExtension;
+use RockujemyWpExt\Utilities\Twig\Extension\WordpressExtensions;
 use Symfony\Component\Asset\Package;
 use Symfony\Component\Asset\VersionStrategy\EmptyVersionStrategy;
 use Twig\Environment;

@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace App\CustomTaxonomy;
 
-use Grzechu\CustomTaxonomy\Taxonomy;
+use RockujemyWpExt\CustomTaxonomy\Taxonomy;
 
 class Genere extends Taxonomy
 {

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\CustomPostType;
+namespace RockujemyWpExt\CustomPostType;
 
 abstract class PostType
 {

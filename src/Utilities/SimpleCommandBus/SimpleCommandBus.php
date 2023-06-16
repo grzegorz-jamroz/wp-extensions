@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\Utilities\SimpleCommandBus;
+namespace RockujemyWpExt\Utilities\SimpleCommandBus;
 
-use Grzechu\Validation\Exception\ValidationException;
+use RockujemyWpExt\Validation\Exception\ValidationException;
 
 final class SimpleCommandBus
 {

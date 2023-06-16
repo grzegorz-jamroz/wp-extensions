@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\Validator\Exception;
+namespace RockujemyWpExt\Validator\Exception;
 
 class UnexpectedPayloadException extends \RuntimeException
 {

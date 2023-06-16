@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Grzechu\Validation\Exception;
+namespace RockujemyWpExt\Validation\Exception;
 
-use Grzechu\Presenter\Feature\FormErrors;
+use RockujemyWpExt\Presenter\Feature\FormErrors;
 use Symfony\Component\Validator\ConstraintViolationList;
 
 class ValidationException extends \Exception

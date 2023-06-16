@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\RestApi;
+namespace RockujemyWpExt\RestApi;
 
 abstract class RestRoute
 {

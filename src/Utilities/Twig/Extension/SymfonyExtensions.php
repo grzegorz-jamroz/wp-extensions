@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\Utilities\Twig\Extension;
+namespace RockujemyWpExt\Utilities\Twig\Extension;
 
-use Grzechu\Utilities\Asset;
+use RockujemyWpExt\Utilities\Asset;
 
 class SymfonyExtensions
 {

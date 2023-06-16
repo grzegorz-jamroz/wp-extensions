@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\Presenter\Feature;
+namespace RockujemyWpExt\Presenter\Feature;
 
 use Ifrost\Foundations\ArrayConstructable;
 use PlainDataTransformer\Transform;

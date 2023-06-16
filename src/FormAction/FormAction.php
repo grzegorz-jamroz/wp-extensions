@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\FormAction;
+namespace RockujemyWpExt\FormAction;
 
-use Grzechu\Utilities\SimpleCommandBus\SimpleCommandBus;
-use Grzechu\Validation\Exception\ValidationException;
+use RockujemyWpExt\Utilities\SimpleCommandBus\SimpleCommandBus;
+use RockujemyWpExt\Validation\Exception\ValidationException;
 
 abstract class FormAction
 {

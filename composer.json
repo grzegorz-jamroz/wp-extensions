@@ -1,6 +1,6 @@
 {
   "name": "grzegorz-jamroz/wp-extensions",
-  "description": "Library contains some classes which allow to prepare easy and quick custom settings pages.",
+  "description": "Library used in Rockujemy themes and plugins.",
   "require": {
     "php": ">=7.4",
     "symfony/validator": "^5.0",
@@ -10,7 +10,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Grzechu\\": "src/"
+      "RockujemyWpExt\\": "src/"
     }
   }
 }

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\Validator;
+namespace RockujemyWpExt\Validator;
 
-use Grzechu\Validator\Exception\UnexpectedPayloadException;
+use RockujemyWpExt\Validator\Exception\UnexpectedPayloadException;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;

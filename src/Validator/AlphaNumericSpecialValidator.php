@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\Validator;
+namespace RockujemyWpExt\Validator;
 
 
 use Symfony\Component\Validator\Constraint;

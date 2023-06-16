@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Grzechu\Customizer;
+namespace RockujemyWpExt\Customizer;
 
 abstract class Control
 {
