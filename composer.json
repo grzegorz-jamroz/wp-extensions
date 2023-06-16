@@ -4,7 +4,9 @@
   "require": {
     "php": ">=7.4",
     "symfony/validator": "^5.0",
-    "grzegorz-jamroz/plain-data-transformer": "^0.0.2"
+    "grzegorz-jamroz/plain-data-transformer": "^0.0.2",
+    "grzegorz-jamroz/foundations": "^0.0.3",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {

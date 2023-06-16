@@ -3,29 +3,32 @@ declare(strict_types=1);
 
 namespace Grzechu\FormAction;
 
-use Symfony\Component\Validator\ConstraintViolationListInterface;
+use Grzechu\Utilities\SimpleCommandBus\SimpleCommandBus;
+use Grzechu\Validation\Exception\ValidationException;
 
 abstract class FormAction
 {
-    protected $action;
+    protected string $action;
+    private SimpleCommandBus $commandBus;
 
-    public function __construct(string $action)
-    {
+    public function __construct(
+        string $action,
+        SimpleCommandBus $commandBus
+    ) {
         $this->action = $action;
+        $this->commandBus = $commandBus;
         $this->init();
     }
 
     abstract public function init();
     abstract public function submit();
 
-    public function getErrorMessages(ConstraintViolationListInterface $violations): array
+    /**
+     * @throws \Exception
+     * @throws ValidationException
+     */
+    protected function handle(object $command): void
     {
-        $errors = [];
-
-        foreach ($violations as $violation) {
-            $errors[] = $violation->getMessage();
-        }
-
-        return $errors;
+        $this->commandBus->handle($command);
     }
 }
