@@ -1,19 +1,26 @@
-# Wordpress Extensions
+<h1 align="center">Rockujemy Wordpress Extensions</h1>
 
-Library allow to build quicker some custom functionalities inside your wordpress theme without using plugins.
+<p align="center">
+    <strong>Library used in Rockujemy themes and plugins.</strong>
+</p>
 
-## Requirements
-
-- PHP 7.4 ![php](https://img.shields.io/badge/php-7.4%20>-blue)
-- Wordpress 5.32: ![version](https://img.shields.io/badge/wordpress-5.32%20>-yellow)
-
+<p align="center">
+    <img src="https://img.shields.io/badge/php->=7.4-blue?colorB=%238892BF" alt="Code Coverage">  
+    <img src="https://img.shields.io/badge/release-v1.0.0-blue" alt="Release Version">   
+</p>
 
 # Installation
 
-Open console in your wordpress theme folder:
+Open console in your WordPress theme folder or plugin folder:
 
 ```bash
 cd wordpress\wp-content\themes\your-theme
+```
+
+or
+
+```bash
+cd wordpress\wp-content\plugins\your-plugin
 ```
 
 Run [Composer](https://getcomposer.org) to install this package in your project:
