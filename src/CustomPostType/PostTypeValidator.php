@@ -32,7 +32,7 @@ class PostTypeValidator
         $this->validateAllowedBlockTypes();
     }
 
-    private function validatePostTypeKey()
+    private function validatePostTypeKey(): void
     {
         $violations = $this->validator->validate(
             $this->postType->getPostTypeKey(),
@@ -51,7 +51,7 @@ class PostTypeValidator
         }
     }
 
-    private function validateAllowedBlockTypes()
+    private function validateAllowedBlockTypes(): void
     {
         $violations = $this->validator->validate(
             $this->postType->getArg('allowed_block_types'),

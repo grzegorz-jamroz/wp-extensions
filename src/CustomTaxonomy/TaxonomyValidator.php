@@ -30,7 +30,7 @@ class TaxonomyValidator
         $this->validateTaxonomyKey();
     }
 
-    private function validateTaxonomyKey()
+    private function validateTaxonomyKey(): void
     {
         $violations = $this->validator->validate(
             $this->taxonomy->getTaxonomyKey(),

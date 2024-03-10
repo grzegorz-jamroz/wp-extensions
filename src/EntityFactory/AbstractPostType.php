@@ -21,21 +21,21 @@ abstract class AbstractPostType implements Entity
         $this->slug = sanitize_title($this->title);
     }
 
-    public function setContent(string $content)
+    public function setContent(string $content): self
     {
         $this->content = $content;
 
         return $this;
     }
 
-    public function setMetaInput(array $meta)
+    public function setMetaInput(array $meta): self
     {
         $this->metaInput = $meta;
 
         return $this;
     }
 
-    public function addTerms(array $termIds, string $taxonomy)
+    public function addTerms(array $termIds, string $taxonomy): void
     {
         $this->terms[$taxonomy] = $termIds;
     }

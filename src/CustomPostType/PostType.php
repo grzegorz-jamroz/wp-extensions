@@ -28,7 +28,7 @@ abstract class PostType
 
     abstract public function getPluralName(): string;
 
-    public function __toString()
+    public function __toString(): string
     {
         return self::class;
     }
@@ -38,7 +38,7 @@ abstract class PostType
         return $this->args[$arg] ?? null;
     }
 
-    public function allowed_block_types()
+    public function allowed_block_types(): bool
     {
         $post = get_post();
         $allowedBlockTypes = $this->getArg('allowed_block_types');

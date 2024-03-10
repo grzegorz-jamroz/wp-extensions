@@ -23,7 +23,7 @@ abstract class Setting
         add_action('customize_register', [$this, 'register']);
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->getSettingId();
     }

@@ -3,17 +3,22 @@ declare(strict_types=1);
 
 namespace RockujemyWpExt\FormAction;
 
+use RockujemyWpExt\Utilities\SimpleCommandBus\SimpleCommandBus;
+
 abstract class AjaxFormAction extends FormAction
 {
     protected bool $isPublic;
 
-    public function __construct(string $action, bool $isPublic = false)
-    {
+    public function __construct(
+        string $action,
+        SimpleCommandBus $commandBus,
+        bool $isPublic = false
+    ) {
+        parent::__construct($action, $commandBus);
         $this->isPublic = $isPublic;
-        parent::__construct($action);
     }
 
-    public function init()
+    public function init(): void
     {
         add_action('wp_enqueue_scripts', [$this, 'enqueueScripts']);
         add_action(sprintf('wp_ajax_%s', $this->action), [$this, 'submit']);
@@ -23,5 +28,5 @@ abstract class AjaxFormAction extends FormAction
         }
     }
 
-    abstract public function enqueueScripts();
+    abstract public function enqueueScripts(): void;
 }

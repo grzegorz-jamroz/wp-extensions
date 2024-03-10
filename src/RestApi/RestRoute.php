@@ -18,16 +18,6 @@ abstract class RestRoute
         return self::$instances[$className];
     }
 
-    public function __toString()
-    {
-        return $this->getUrl();
-    }
-
-    public function getUrl(): string
-    {
-        return sprintf('%s/?rest_route=/%s%s', get_site_url() , $this->getNamespace(), $this->getRoute());
-    }
-
     abstract public function __invoke(\WP_REST_Request $request);
     abstract public function getNamespace(): string;
     abstract protected function getRoute(): string;
@@ -42,6 +32,16 @@ abstract class RestRoute
                 $this->getArgs()
             );
         });
+    }
+
+    public function __toString(): string
+    {
+        return $this->getUrl();
+    }
+
+    public function getUrl(): string
+    {
+        return sprintf('%s/?rest_route=/%s%s', get_site_url() , $this->getNamespace(), $this->getRoute());
     }
 
     private function __clone()

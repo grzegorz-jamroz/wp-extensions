@@ -55,11 +55,6 @@ abstract class AdminPage
         return self::$instances[$className];
     }
 
-    public function __toString()
-    {
-        return self::class;
-    }
-
     final private function __construct()
     {
         $this->pageTitle = $this->getPageTitle();
@@ -90,6 +85,11 @@ abstract class AdminPage
     abstract public function getPageHeaderHtml(): string;
     abstract public function callableFunction();
 
+    public function __toString(): string
+    {
+        return self::class;
+    }
+
     public function getPosition(): int
     {
         return 1;
@@ -100,12 +100,12 @@ abstract class AdminPage
         return '';
     }
 
-    public function getParentSlug()
+    public function getParentSlug(): string
     {
         return '';
     }
 
-    public function adminMenu()
+    public function adminMenu(): void
     {
         add_menu_page(
             $this->pageTitle,
@@ -118,7 +118,7 @@ abstract class AdminPage
         );
     }
 
-    public function adminSubMenu()
+    public function adminSubMenu(): void
     {
         add_submenu_page(
             $this->parentSlug,
@@ -130,7 +130,7 @@ abstract class AdminPage
         );
     }
 
-    public function dismissAllNotices()
+    public function dismissAllNotices(): void
     {
         if (!isset($_GET['page']) || $_GET['page'] !== $this->menuSlug) {
             return;
@@ -140,7 +140,7 @@ abstract class AdminPage
         remove_all_actions('all_admin_notices');
     }
 
-    private function registerMenu()
+    private function registerMenu(): void
     {
         if ($this->parentSlug !== '') {
             add_action('admin_menu', [$this, 'adminSubMenu']);

@@ -20,8 +20,8 @@ abstract class FormAction
         $this->init();
     }
 
-    abstract public function init();
-    abstract public function submit();
+    abstract public function init(): void;
+    abstract public function submit(): void;
 
     /**
      * @throws \Exception
